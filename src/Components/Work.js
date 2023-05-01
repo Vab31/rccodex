@@ -1,7 +1,30 @@
 import React from 'react'
 import './Work.css'
+import { useState } from 'react';
+import axios from 'axios'
 
 const Work = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios.post('http://localhost:5000/api/contact', {
+      name: name,
+      email: email,
+      message: message
+    })
+    .then((response) => {
+      console.log(response);
+      // do something with the response
+    })
+    .catch((error) => {
+      console.log(error);
+      // handle the error
+    });
+  };
   return (
     <div><div id="portfolio" className="text-center">
     <div className="container">
@@ -178,6 +201,7 @@ const Work = () => {
           action="php/contact.php"
           name="contactform"
           id="contactform"
+          onSubmit={handleSubmit}
         >
           <input
             name="name"
@@ -185,19 +209,22 @@ const Work = () => {
             id="name"
             className="inputForm2"
             placeholder="Name"
+            onChange={(event) => setName(event.target.value)}
           />
-          <input name="email" type="text" id="email" placeholder="Email" />
+          <input name="email" type="text" id="email" placeholder="Email"  onChange={(event) => setEmail(event.target.value)} />
           <textarea
             name="comments"
             id="comments"
             placeholder="Message"
             defaultValue={""}
+            onChange={(event) => setMessage(event.target.value)}
           />
           <input
             type="submit"
             className="send_message transition"
             id="submit"
             defaultValue="Send Message"
+           
           />
         </form>
       </div>

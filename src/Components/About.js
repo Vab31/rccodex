@@ -45,6 +45,11 @@ const About = () => {
             </a>
           </li>
           <li>
+            <a href="#portfolio" className="scroll-nav">
+              Get-Code
+            </a>
+          </li>
+          <li>
             <a href="#contact" className="scroll-nav">
               Contact
             </a>
