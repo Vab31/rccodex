@@ -43,12 +43,7 @@ const Footer = () => {
             <p>© 2017 rccodex</p>
           </div>
           <div className="col-sm-6">
-            <p className="pull-right">
-              Developed by{" "}
-              <a href="https://www.instagram.com/rccodex/">
-             Baghi and Vaibhav
-              </a>
-            </p>
+            
           </div>
         </div>
       </div>
