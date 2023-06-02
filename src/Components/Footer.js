@@ -46,7 +46,7 @@ const Footer = () => {
             <p className="pull-right">
               Developed by{" "}
               <a href="https://www.instagram.com/rccodex/">
-             Baghi
+             Baghi and Vaibhav
               </a>
             </p>
           </div>
